@@ -1,0 +1,28 @@
+#profileitems {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: right;
+}
+
+#mainnav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: darkblue;
+}
+
+.mainnavbutton {
+    border-radius: 50%;
+    background-color: chartreuse;
+    color: chartreuse;
+    transition-duration: 0.4s;
+}
+
+.mainnavbutton:hover {
+    background-color: white;
+    border: chartreuse;
+    border-width: 3px;
+}
