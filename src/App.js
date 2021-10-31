@@ -10,10 +10,10 @@ import CreateProjectPage from './pages/CreateProjectPage.jsx';
 function App() {
   return (
     <div>
-      <h1 id="title">GIMME</h1>
       <Router>
+      <NavigationComponent/>
+      <h1 id="title">GIMME</h1>
         <div>
-          <NavigationComponent/>
           <nav>
             <Switch>
               <Route path="/project/:id">

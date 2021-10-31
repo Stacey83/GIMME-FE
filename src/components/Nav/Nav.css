@@ -7,22 +7,30 @@
 
 #mainnav {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
+    gap: 0.5em;
+    font-size: 16px;
     background-color: darkblue;
+    justify-content: space-around;
+
 }
 
-.mainnavbutton {
+#mainnav a {
+    color: white;
+    border: 3px solid green;
+    height: 6em;
+    width: 6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     border-radius: 50%;
-    background-color: chartreuse;
-    color: chartreuse;
-    transition-duration: 0.4s;
+    transition: all, 0.4s, ease;
+    text-align: center;
+    background-color: green;
 }
 
-.mainnavbutton:hover {
+#mainnav a:hover {
     background-color: white;
-    border: chartreuse;
-    border-width: 3px;
+    color: green;
 }
+

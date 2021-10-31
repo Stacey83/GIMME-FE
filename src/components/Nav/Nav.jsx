@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
+import "./Nav.css";
 
 const removeToken = () => {
     localStorage.removeItem("token");
@@ -15,10 +16,9 @@ function Nav() {
     return (
         <nav>
             <div id="mainnav">
-            <Link to="/">Home</Link>
-            <button class="mainnavbutton">All Projects</button>
-            <Link to="/Projects">All projects</Link>
-            <Link to="/CreateNewUser">Sign up</Link>
+            <Link to="/" class="cirlelink">Home</Link>
+            <Link to="/Projects" class="cirlelink">All projects</Link>
+            <Link to="/CreateNewUser" class="cirlelink">Sign up</Link>
             </div>
             <div id="secondnav">
             {/* /* look at diary for action.  One function to check login/logout status via token. */}
