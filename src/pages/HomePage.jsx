@@ -2,6 +2,7 @@ import React, {useState, useEffect } from "react";
 import { allProjects } from "../data";
 import ProjectCard from "../components/ProjectCard/ProjectCard"
 
+
 function HomePage() {
     const [projectList, setProjectList] = useState([]);
     const [pledgeList, setPledgeList] = useState([]);
@@ -9,84 +10,22 @@ function HomePage() {
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}projects`)
         .then((results) => {
-            // console.log(results);
             return results.json();
         })
         .then((data) => {
-            // console.log(data);
             setProjectList(data);
             console.log("Project list", data)
         });
         fetch(`${process.env.REACT_APP_API_URL}pledges`)
         .then((results) => {
-            // console.log(results);
             return results.json();
         })
         .then((data) => {
-            // console.log(data);
             setPledgeList(data);
             console.log("pledgelist", data)
         });
     }, []);
 
-    // const mypledgeList = [
-    //     {
-    //       amount: 5,
-    //       id: 1
-    //     },
-    //     {
-    //       amount: 15,
-    //       id: 1
-    //     },
-    //     {
-    //       amount: 5,
-    //       id: 2
-    //     },
-    //     {
-    //         amount: 25,
-    //         id: 2
-    //     },
-    //       {
-    //       amount: 5,
-    //       id: 3
-    //     },
-    //     {
-    //         amount: 25,
-    //         id: 3
-    //     },
-    //         {
-    //       amount: 1,
-    //       id: 4
-    //     },
-    //     {
-    //         amount: 3,
-    //         id: 4
-    //     }
-    //   ]
-      
-    //   const myprojectList = [
-    //     {
-    //       id: 1,
-    //       goal: 100,
-    //       title: "Project 1"
-    //     },
-    //       {
-    //       id: 2,
-    //       goal: 100,
-    //       title: "Project 2"
-    //     },
-    //       {
-    //       id: 3,
-    //       goal: 100,
-    //       title: "Project 3"
-    //     },
-    //         {
-    //       id: 4,
-    //       goal: 100,
-    //       title: "Project 4"
-    //     }
-    //   ]
-      
       const getPledgesTotalsInfo = () => {
         const totals = projectList.map(project => {
           const pledgesForThisProject = pledgeList.flatMap(pledge => {
@@ -102,6 +41,8 @@ function HomePage() {
           }, 0)
           
           return ({
+            title: project.title,
+            image: project.image,
             id: project.id,
             goal: project.goal,
             pledges: pledgesForThisProject,
@@ -120,12 +61,17 @@ function HomePage() {
     return (
         <div>
             <p id="intro">Welcome to GIMME <br/>Yes, GIMME all your money! <br/>Please feel free to GIMME all your money for the worst crowdfunding projects currently available. <br/>Check back regularly for more great worst crowdfunding projects.</p>,
+            <div>
+              <a id="projectintro">Top Project Achievers</a>
+            </div>
             <div id="project-list">
                 {pledgesTotalInfo.map((project, key) => {
                     return (
-                        <div>
-                            <p>{project.percentageReached}</p>
-                            <p>{project.goal}</p>
+                        <div class="hpprojecttile">
+                            {/* <p>{project.percentageReached}</p>
+                            <p>{project.goal}</p> */}
+                            <p>{project.title}</p>
+                            <p>{project.image}</p>
                         </div>
                     )
                     // return <ProjectCard key={key} projectData={projectData} />;

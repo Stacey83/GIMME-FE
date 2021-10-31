@@ -37,3 +37,22 @@ h2 {
     color: darkblue;
     font-size: 2pc;
 }
+
+#projectintro {
+    background-color: chartreuse;
+    color: darkblue;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    font-size: 32px;
+}
+
+.hpprojecttile {
+    border: rgb(211, 60, 5);
+    border-width: 2px;
+    padding: 0.2em;
+    background-color: coral;
+    text-align: center;
+    font-weight: bolder;
+    margin: 10px;
+}

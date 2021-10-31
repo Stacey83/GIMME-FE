@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import ProjectPage from './pages/ProjectPage';
 import "./App.css";
 import LoginPage from './pages/LoginPage.jsx';
+import createNewUser from './pages/CreateNewUser.jsx';
 import CreateProjectPage from './pages/CreateProjectPage.jsx';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
               <Route path="/login">
                 <LoginPage />
               </Route>
-              <Route path="/createnewuser">
+              <Route path="/createNewUser">
                 <LoginPage />
               </Route>
               <Route exact path="/createproject">
