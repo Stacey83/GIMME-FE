@@ -34,6 +34,8 @@ function LoginForm() {
             postData().then((response) => {
             window.localStorage.setItem("token", response.token);
             history.push("/");
+            window.location.reload();  // reload used as timeframes didn't allow restructuring of coding. (naughty naughty)
+            window.location = `${window.location.origin}/`
             });
         }
     };
