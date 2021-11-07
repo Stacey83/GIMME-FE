@@ -3,44 +3,31 @@ import { useHistory } from "react-router-dom";
 import "./CreateProjectForm.css";
 
 function CreateProjectForm() {
-  const [credentials, setCredentials] = useState({
-    username: "",
-    password: "",
+  const [projectData, setProjectData] = useState({
+    date_created: new Date().toISOString(),
+    is_open: true,
   });
   const history = useHistory();
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setCredentials((prevCredentials) => ({
-      ...prevCredentials,
+    setProjectData((prevProjectData) => ({
+      ...prevProjectData,
       [id]: value,
     }));
   };
 
-  const postData = async () => {
-    const response = await fetch(
-      `${process.env.REACT_APP_API_URL}api-token-auth/`,
-      {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(credentials),
-      }
-    );
-    return response.json();
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (credentials.username && credentials.password) {
-      postData().then((response) => {
-        window.localStorage.setItem("token", response.token);
-        history.push("/");
-        window.location.reload(); // reload used as timeframes didn't allow restructuring of coding. (naughty naughty)
-        window.location = `${window.location.origin}/`;
-      });
-    }
+    await fetch(`${process.env.REACT_APP_API_URL}projects/`, {
+      method: "post",
+      headers: {
+        Authorization: `Token ${window.localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(projectData),
+    });
+    history.push("/");
   };
 
   return (
@@ -50,8 +37,9 @@ function CreateProjectForm() {
           <div>
             <label htmlFor="title">Project title: </label>
             <input
+              value={projectData.title}
               type="text"
-              //   id="title"
+              id="title"
               placeholder="Enter Project title"
               onChange={handleChange}
             />
@@ -59,6 +47,7 @@ function CreateProjectForm() {
           <div>
             <label htmlFor="description">Project description: </label>
             <input
+              value={projectData.description}
               type="text"
               id="description"
               placeholder="Enter Project description"
@@ -68,6 +57,7 @@ function CreateProjectForm() {
           <div>
             <label htmlFor="goal">Project goal: </label>
             <input
+              value={projectData.goal}
               type="text"
               id="goal"
               placeholder="Enter Project goal"
@@ -75,21 +65,12 @@ function CreateProjectForm() {
             />
           </div>
           <div>
-            <label htmlFor="goal">Project image URL: </label>
+            <label htmlFor="image">Project image URL: </label>
             <input
+              value={projectData.image}
               type="text"
-              //   id="image?"
+              id="image"
               placeholder="Enter Project image URL"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="date_created">Date Project created: </label>
-            {/* todays date/calendar selection? */}
-            <input
-              type="text"
-              id="date_created"
-              placeholder="Date Project created"
               onChange={handleChange}
             />
           </div>
@@ -97,6 +78,7 @@ function CreateProjectForm() {
             <label htmlFor="comments">Project comments: </label>
             {/* meant for blog type correspondance not at Create Project stage */}
             <input
+              value={projectData.comments}
               type="text"
               id="comments"
               placeholder="Enter Project comments"
@@ -107,6 +89,7 @@ function CreateProjectForm() {
             <label htmlFor="category">Select Project category: </label>
             {/* drop down list of basic categories */}
             <input
+              value={projectData.category}
               type="text"
               id="category"
               placeholder="Select Project category"

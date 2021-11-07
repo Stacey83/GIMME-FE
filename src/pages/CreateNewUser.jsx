@@ -1,9 +1,8 @@
-import React from "react";
-import Newuser from "../components/NewUser/NewUser";
+// import React from "react";
+// import NewUserForm from "../components/NewUserForm/NewUserForm";
 
-function CreateNewUser() {
-    // return <Newuser />;
-    return <h1>This is where you create a new profile</h1>
-}
+// function CreateNewUser() {
+//   return <NewUserForm />;
+// }
 
-export default CreateNewUser
+// export default CreateNewUser;

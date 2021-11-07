@@ -27,13 +27,16 @@ function ProjectPage() {
   };
 
   return (
-    <div>
+    <div id="ProjectPageTile">
       {localStorage.getItem("token") && (
         <button onClick={deleteProject}> Delete Project </button>
       )}
       <h2>{projectData.title}</h2>
-      <h3>Created at: {projectData.date_created}</h3>
+      <img src={projectData.image} />
+      <h3>{projectData.description}</h3>
+      <h3>Date Project Created: {projectData.date_created}</h3>
       <h3>{`Status: ${projectData.is_open}`}</h3>
+      <h3>Comments: {projectData.comments}</h3>
       <h3>Pledges:</h3>
       <ul>
         {projectData.pledges.map((pledgeData, key) => {

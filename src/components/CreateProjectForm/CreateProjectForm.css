@@ -1,14 +1,1 @@
-.form {
-  background-color: chartreuse;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  padding: 10px;
-  width: 500px;
-}
-
-.formcontent {
-  color: white;
-  font-weight: bolder;
-}
+/* Refer to .form in app.css */

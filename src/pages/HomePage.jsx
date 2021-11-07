@@ -65,10 +65,12 @@ function HomePage() {
   return (
     <div>
       <p id="intro">
-        Welcome to GIMME <br />
-        Yes, GIMME all your money! <br />
-        Please feel free to GIMME all your money for the worst crowdfunding
-        projects currently available. <br />
+        Welcome to <a class="emphasis"> GIMME</a>
+        <br />
+        Yes, <a class="emphasis"> GIMME </a> all your money!
+        <br />
+        Please feel free to <a class="emphasis"> GIMME </a> all your money for
+        the worst crowdfunding projects currently available. <br />
         Check back regularly for more great worst crowdfunding projects.
       </p>
       ,

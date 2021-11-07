@@ -68,3 +68,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+To do list
+
+Make the Comments section for projects like a blog, so people can post questions and answers about the project.
+Have a pledge sum total amount on the project page
+Change the links text color, and align to the right hand side of the main navigation
+Fix New User form to create new user with token

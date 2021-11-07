@@ -1,36 +1,43 @@
 #profileitems {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: right;
 }
 
 #mainnav {
-    display: flex;
-    gap: 0.5em;
-    font-size: 16px;
-    background-color: darkblue;
-    justify-content: space-around;
-
+  display: flex;
+  gap: 0.5em;
+  font-size: 16px;
+  background-color: #ffe9da;
+  justify-content: space-around;
+  padding-top: 10px;
 }
 
 #mainnav a {
-    color: white;
-    border: 3px solid green;
-    height: 6em;
-    width: 6em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    border-radius: 50%;
-    transition: all, 0.4s, ease;
-    text-align: center;
-    background-color: green;
+  color: white;
+  border: 4px solid #fc8c6a;
+  height: 6em;
+  width: 6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: all, 0.4s, ease;
+  text-align: center;
+  background-color: #ff9e80;
 }
 
 #mainnav a:hover {
-    background-color: white;
-    color: green;
+  background-color: #fcb59f;
+  border: 4px solid #ff9e80;
+  color: white;
 }
 
+#secondnav {
+  background-color: #ffe9da;
+  color: black;
+  display: block;
+  justify-content: end;
+}

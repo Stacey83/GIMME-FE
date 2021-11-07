@@ -1,58 +1,103 @@
 @import url("https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap");
 
 #project-list {
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    justify-content: center;
-    column-gap: 10px;
-    row-gap: 10px;
-    margin: 10px, 10px, 10px, 10px;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  justify-content: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  margin: 10px, 10px, 10px, 10px;
 }
 
-#title {
-    font-family: 'Irish Grover', cursive;
-    color: chartreuse;
-    background-color: darkblue;
-    text-align: center;
-    font-size: 10pc;
-    margin: 0;
+#maintitle {
+  font-family: "Irish Grover", cursive;
+  color: #fc8c6a;
+  background-color: #ffe9da;
+  text-align: center;
+  font-size: 10pc;
+  margin: 0;
 }
 
 #intro {
-    font-family: 'Irish Grover', cursive;
-    color: ghostwhite;
-    background-color: darkblue;
-    text-align: center;
-    font-size: 2pc;
-    margin-top: 0;
+  font-family: "Irish Grover", cursive;
+  color: #4b4341;
+  background-color: #ffe9da;
+  text-align: center;
+  font-size: 2pc;
+  margin-top: 0;
 }
 
 .emphasis {
-    color: chartreuse;
+  color: #fc8c6a;
 }
 
 h2 {
-    text-align: center;
-    font-family: 'Irish Grover', cursive;
-    color: darkblue;
-    font-size: 2pc;
+  text-align: center;
+  font-family: "Irish Grover", cursive;
+  color: white;
+  font-size: 2pc;
+}
+
+h3 {
+  justify-content: center;
 }
 
 #projectintro {
-    background-color: chartreuse;
-    color: darkblue;
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-    font-size: 32px;
+  background-color: #bea198;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 20px;
 }
 
 .hpprojecttile {
-    border: rgb(211, 60, 5);
-    border-width: 2px;
-    padding: 0.2em;
-    background-color: coral;
-    text-align: center;
-    font-weight: bolder;
-    margin: 10px;
+  border: #4b4341;
+  border-width: 2px;
+  padding: 0.2em;
+  background-color: #bea198;
+  text-align: center;
+  font-weight: bolder;
+  margin: 20px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 2px solid black;
+  object-fit: none;
+}
+
+#ProjectPageTile {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.form {
+  background-color: #a39996;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 10px;
+  width: 400px;
+  border: 3px solid #666261;
+}
+
+.formcontent {
+  color: white;
+  font-weight: bolder;
+  /* align-self: flex-start; */
+}
+
+input {
+  display: block;
+  width: 350px;
+  float: inline-end;
 }
