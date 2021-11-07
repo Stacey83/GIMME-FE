@@ -28,9 +28,6 @@ function ProjectPage() {
 
   return (
     <div id="ProjectPageTile">
-      {localStorage.getItem("token") && (
-        <button onClick={deleteProject}> Delete Project </button>
-      )}
       <h2>{projectData.title}</h2>
       <img src={projectData.image} />
       <h3>{projectData.description}</h3>
@@ -47,6 +44,9 @@ function ProjectPage() {
           );
         })}
       </ul>
+      {localStorage.getItem("token") && (
+        <button onClick={deleteProject}> Delete Project </button>
+      )}
     </div>
   );
 }
